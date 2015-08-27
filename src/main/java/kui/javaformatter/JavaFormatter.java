@@ -21,10 +21,6 @@ public class JavaFormatter {
         formatter = ToolFactory.createCodeFormatter(null);
     }
 
-    /**
-     * hogehoge
-     * fugafuga
-     */
     public String format(File file, Charset charset) throws IOException, MalformedTreeException, BadLocationException {
         String contents = new String(Files.readAllBytes(file.toPath()), charset);
         TextEdit edit = formatter.format(CodeFormatter.K_COMPILATION_UNIT, contents, 0, contents.length(), 0, null);
